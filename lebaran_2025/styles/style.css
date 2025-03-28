@@ -1,0 +1,1259 @@
+* {
+  margin: 0;
+  padding: 0;
+  font: unset;
+  box-sizing: border-box;
+}
+
+:root {
+  --opacity: 0;
+}
+
+audio {
+  display: none;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgb(95, 143, 255), rgb(118, 232, 166));
+  z-index: -999;
+  opacity: var(--opacity);
+  transition: opacity 2s ease 0s;
+}
+
+.auto-scroll {
+  z-index: 1000000000000000000000000000;
+  width: 30vw;
+  text-align: center;
+  justify-content: center;
+  right: 0;
+  background-color: #1f0a27;
+  color: white;
+  padding: 0.6vw;
+  border-top: unset;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+.auto-scroll input {
+  width: 1vw;
+  height: 1vw;
+}
+.auto-scroll label {
+  font-size: 1vw;
+}
+.auto-scroll div {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+
+body {
+  width: 100vw;
+  height: 100dvh;
+  background: linear-gradient(to bottom, rgb(70, 57, 96), rgb(232, 148, 118));
+  overflow: hidden;
+}
+
+body.moredark {
+  background: linear-gradient(to bottom, black, #270059);
+}
+
+body.light {
+  background: linear-gradient(to bottom, rgb(95, 143, 255), rgb(118, 232, 166));
+}
+
+@keyframes firstSlideAnimation {
+  from {
+    top: 100%;
+  }
+  to {
+    top: 30%;
+  }
+}
+@keyframes keepScroll {
+  from {
+    transform: translate(0, -0.2vw);
+  }
+  to {
+    transform: translate(0, 0.2vw);
+  }
+}
+html {
+  overflow: hidden;
+}
+
+@keyframes gokunimation {
+  to {
+    transform: scale(-1, 1) translate(-100vw, -1vw);
+  }
+}
+@keyframes carShake {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(0, 3px);
+  }
+}
+@keyframes banAnimation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes mountainsAnimation {
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes starsAnimation {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes graceAnimation {
+  to {
+    transform: translateX(-100%);
+  }
+}
+.logo {
+  position: fixed;
+  top: 2vw;
+  left: 2vw;
+  width: 6vw;
+  z-index: 10000000000000000000000000000;
+  transition: all 500ms ease 0s;
+  filter: brightness(1);
+}
+
+.logo.black {
+  filter: brightness(0);
+}
+
+.ig.show {
+  opacity: 1;
+}
+.ig.show * {
+  pointer-events: unset;
+}
+
+.ig {
+  z-index: 1000000000000000000000000000000000;
+  transition: all 2s ease 0s;
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.951);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 5vw;
+  padding: 7vw;
+}
+.ig * {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.ig .teams,
+.ig .head {
+  transform: translate(0, -1vw);
+}
+.ig .teams {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vw;
+  justify-content: center;
+  align-items: center;
+}
+.ig .teams .team:hover {
+  transform: scale(1.1);
+}
+.ig .teams .team {
+  transition: transform 200ms ease 0s;
+  border: 1px solid black;
+  padding: 0.4vw 0.6vw;
+  border-radius: 0.5vw;
+  display: flex;
+  align-items: center;
+  gap: 0.5vw;
+}
+.ig .teams .team svg {
+  width: 1.5vw;
+  height: 1.5vw;
+}
+.ig .teams .team span {
+  font-size: 1.2vw;
+}
+.ig .head h5 {
+  font-size: 2vw;
+}
+.ig .head h3 {
+  font-size: 4vw;
+}
+.ig .head span {
+  font-size: 1vw;
+}
+
+.frame {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+.frame .contents {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.frame .contents .second-slide.show {
+  transform: translate(0, 3vw);
+  opacity: 1;
+}
+.frame .contents .second-slide {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 3s ease;
+  transform: translate(0, 100vw);
+  opacity: 0;
+  z-index: -9;
+  position: relative;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.frame .contents .second-slide .head {
+  color: white;
+  margin-bottom: 2vw;
+  text-align: center;
+}
+.frame .contents .second-slide .head h3 {
+  font-size: 1.2vw;
+  color: white;
+}
+.frame .contents .second-slide .head h1 {
+  font-size: 2.5vw;
+  color: white;
+  font-weight: bold;
+}
+.frame .contents .second-slide .head p {
+  margin-top: 1.3vw;
+  font-size: 1.2vw;
+}
+.frame .contents .second-slide .head .taqab {
+  margin-top: 1.4vw;
+}
+.frame .contents .second-slide .head .taqab span {
+  font-size: 1.7vw;
+}
+.frame .contents .second-slide .head .taqab p {
+  width: 30vw;
+  margin: auto;
+  margin-top: unset;
+}
+.frame .contents .second-slide .head ul, .frame .contents .second-slide .head li {
+  font-size: 1.2vw;
+}
+.frame .contents .third-slide.show {
+  transform: translate(0, -24vw) scale(1);
+}
+.frame .contents .third-slide {
+  transition: all 2s ease 0s;
+  position: relative;
+  z-index: -6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+  gap: 0.4vw;
+  transform: translate(0, -19vw) scale(0);
+  color: white;
+}
+.frame .contents .third-slide .head {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.frame .contents .third-slide .head h1 {
+  font-size: 2.4vw;
+  font-weight: bold;
+}
+.frame .contents .third-slide .head h1 span {
+  color: rgb(4, 230, 230);
+}
+.frame .contents .third-slide .head h5 {
+  font-size: 1.1vw;
+}
+.frame .contents .third-slide .head h3 {
+  font-size: 2vw;
+}
+.frame .contents .third-slide .head h3 span {
+  color: rgb(4, 230, 230);
+}
+.frame .contents .third-slide .head h4 {
+  font-size: 1.1vw;
+}
+.frame .contents .third-slide .images {
+  display: flex;
+}
+.frame .contents .third-slide .images img {
+  opacity: 0;
+  width: 17vw;
+  border: 0.3vw solid peachpuff;
+  transition: all 500ms ease 0s;
+}
+.frame .contents .third-slide .images .left,
+.frame .contents .third-slide .images .right {
+  display: flex;
+  flex-direction: column;
+}
+.frame .contents .third-slide .images .center.zoomed {
+  transition: all 3s ease 0s;
+  transform: scale(2.5);
+}
+.frame .contents .third-slide .images .center {
+  width: 34vw;
+}
+.frame .contents .third-slide .images img.show {
+  opacity: 1;
+}
+.frame .contents .first-slide.hide {
+  opacity: 0;
+}
+.frame .contents .first-slide.startAnimate {
+  animation: firstSlideAnimation 4s ease 1s forwards;
+}
+.frame .contents .first-slide {
+  transition: all 2s ease 0s;
+  z-index: -6;
+  text-align: center;
+  position: absolute;
+  width: 50vw;
+  top: 120%; /* position the top  edge of the element at the middle of the parent */
+  left: 50%; /* position the left edge of the element at the middle of the parent */
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.frame .contents .first-slide h1 {
+  font-weight: bold;
+  font-size: 3.5vw;
+}
+.frame .contents .first-slide p {
+  font-size: 1.4vw;
+}
+.frame .contents .first-slide span {
+  font-size: 0.9vw;
+}
+.frame .contents .first-slide h6 {
+  font-size: 1.1vw;
+}
+.frame .contents .first-slide h5 {
+  font-size: 1.2vw;
+}
+.frame .contents .first-slide img {
+  position: absolute;
+}
+.frame .contents .first-slide .head {
+  display: flex;
+  flex-direction: column;
+}
+.frame .contents .first-slide .quotes {
+  width: 32vw;
+  margin: auto;
+  margin-top: 1.4vw;
+}
+.frame .contents .first-slide .quotes svg:first-child {
+  position: absolute;
+  left: 7vw;
+  bottom: 3vw;
+  filter: invert(1);
+  width: 2vw;
+  height: 2vw;
+}
+.frame .component * {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+.frame .component .sky {
+  position: absolute;
+  z-index: -9;
+  top: 7vw;
+}
+.frame .component .sky .stars {
+  display: flex;
+  animation: starsAnimation 30s linear 0s infinite;
+}
+.frame .component .sky .stars img {
+  width: 50%;
+  filter: brightness(100);
+}
+.frame .component .sky .goku.show {
+  animation: gokunimation 9s linear 0s forwards;
+}
+.frame .component .sky .goku {
+  width: 4vw;
+  height: auto;
+  transform: scale(-1, 1) translate(10vw, -1vw);
+}
+.frame .component .sky .moons.sun {
+  background-color: yellow;
+  box-shadow: 0 0 5vw white;
+}
+.frame .component .sky .moons.night {
+  background-color: white;
+  box-shadow: 0 0 5vw white;
+}
+.frame .component .sky .moons {
+  transition: all 500ms ease 0s;
+  position: fixed;
+  top: 4vw;
+  right: 4vw;
+  background-color: rgb(255, 150, 75);
+  width: 5vw;
+  height: 5vw;
+  border-radius: 50vw;
+  box-shadow: 0 0 5vw rgb(255, 150, 75);
+}
+.frame .component .ways {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  width: 100vw;
+  height: 3vw;
+  background-color: #1f0a27;
+}
+.frame .component .ways .scroll {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+}
+.frame .component .ways .scroll p {
+  font-size: 1vw;
+}
+.frame .component .ways .scroll .keep-scroll {
+  border-radius: 50%;
+  width: 1.5vw;
+  height: 1.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(69, 69, 69);
+}
+.frame .component .ways .scroll .keep-scroll svg {
+  animation: keepScroll 1s ease 0s infinite alternate;
+  transform: translate(0, 0);
+  width: 0.7vw;
+  height: 0.7vw;
+}
+.frame .component .ways .rumputs {
+  animation: graceAnimation 10s linear 0s infinite;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  z-index: -1;
+  bottom: -5vw;
+}
+.frame .component .ways .rumputs img.rumput2 {
+  width: 100%;
+}
+.frame .component .ways .cars {
+  transition: all 1s ease 0s;
+  transform: translateX(0);
+  position: absolute;
+  top: -7.8vw;
+  left: 3vw;
+}
+.frame .component .ways .cars .car {
+  width: 20vw;
+  position: absolute;
+  transform: translate(0, 0);
+  animation: carShake 0.2s ease 0s infinite alternate;
+}
+.frame .component .ways .cars .ban-behind {
+  left: 2.6vw;
+}
+.frame .component .ways .cars .ban-behind,
+.frame .component .ways .cars .ban-front {
+  top: 4.5vw;
+  width: 3.3vw;
+  position: absolute;
+  animation: banAnimation 2s linear 0s infinite;
+}
+.frame .component .ways .cars .ban-front {
+  left: 14.8vw;
+}
+.frame .component .ways .cars.cars2 {
+  transform: translateX(3vw);
+  top: -12.8vw;
+}
+.frame .component .ways .cars.cars2 .ban-behind,
+.frame .component .ways .cars.cars2 .ban-front {
+  top: 9.5vw;
+  width: 3.3vw;
+  position: absolute;
+  animation: banAnimation 2s linear 0s infinite;
+}
+.frame .component .ways .cars.cars2 .ban-front {
+  left: 11.5vw;
+}
+.frame .component .mountains:nth-child(2) {
+  z-index: -4;
+  transform: translateX(100%);
+}
+.frame .component .mountains-container {
+  position: absolute;
+  bottom: -3vw;
+  left: 0;
+  right: 0;
+  animation: mountainsAnimation 80s linear 0s infinite;
+  z-index: -4;
+}
+.frame .component .mountains {
+  position: absolute;
+  bottom: -4vw;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+.frame .component .mountains img {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.frame .component .mountains img:first-child {
+  z-index: 2;
+  right: -30vw;
+  bottom: -2vw;
+}
+.frame .component .mountains img:last-child {
+  z-index: 1;
+  left: -30vw;
+}
+.frame .component .mountains img:nth-child(2) {
+  transform: scale(-1, 1);
+}
+.frame .component .mountains-container {
+  opacity: 0.4;
+}
+#fireworks-container.show {
+  opacity: 1;
+}
+
+#fireworks-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 1s ease 0s;
+}
+
+.firework-rocket {
+  position: absolute;
+  bottom: 0;
+  width: 0.1vw;
+  height: 0.1vw;
+  transform: translateX(0);
+  pointer-events: none;
+}
+
+.firework-rocket-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  margin-left: 1vw;
+}
+
+.firework-spark {
+  position: absolute;
+  width: 0.2vw;
+  height: 0.2vw;
+  border-radius: 50vw;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.firework-fragment {
+  position: absolute;
+  width: 0.6vw;
+  height: 0.6vw;
+  border-radius: 50vw;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .frame .component .mountains-container {
+    bottom: -16vw;
+  }
+  .auto-scroll input {
+    width: 1.5vw;
+    height: 1.5vw;
+  }
+  .auto-scroll label {
+    font-size: 1.5vw;
+  }
+  .ig .teams .team svg {
+    width: 2vw;
+    height: 2vw;
+  }
+  .ig .teams .team span {
+    font-size: 1.5vw;
+  }
+  .ig .head h5 {
+    font-size: 3vw;
+  }
+  .ig .head h3 {
+    font-size: 5vw;
+  }
+  .ig .head span {
+    font-size: 2vw;
+  }
+  .firework-spark {
+    width: 0.4vw;
+    height: 0.4vw;
+  }
+  .firework-fragment {
+    width: 0.8vw;
+    height: 0.8vw;
+  }
+  .firework-rocket {
+    width: 0.3vw;
+    height: 0.3vw;
+  }
+  .firework-rocket-inner {
+    margin-left: 1vw;
+  }
+  .logo {
+    width: 8vw;
+    top: 3vw;
+    left: 3vw;
+  }
+  .frame .component .mountains img:first-child,
+  .frame .component .mountains img:last-child,
+  .frame .component .mountains img:nth-child(2) {
+    bottom: 10vw;
+  }
+  .frame .component .ways .scroll p {
+    font-size: 1.4vw;
+  }
+  .frame .component .ways .scroll .keep-scroll {
+    width: 2vw;
+    height: 2vw;
+  }
+  .frame .component .ways .scroll .keep-scroll svg {
+    width: 1vw;
+    height: 1vw;
+  }
+  .frame .component .sky .moons {
+    top: 4vw;
+    right: 4vw;
+    width: 7vw;
+    height: 7vw;
+  }
+  .frame .component .sky .goku {
+    width: 6vw;
+  }
+  .frame .contents .first-slide h1 {
+    font-size: 4vw;
+  }
+  .frame .contents .first-slide p {
+    font-size: 1.7vw;
+  }
+  .frame .contents .first-slide span {
+    font-size: 1.2vw;
+  }
+  .frame .contents .first-slide h6 {
+    font-size: 1.5vw;
+  }
+  .frame .contents .first-slide h5 {
+    font-size: 1.7vw;
+  }
+  .frame .contents .second-slide.show {
+    transform: translate(0, 3vw);
+  }
+  .frame .contents .second-slide .head h3 {
+    font-size: 1.5vw;
+  }
+  .frame .contents .second-slide .head h1 {
+    font-size: 4vw;
+  }
+  .frame .contents .second-slide .head p {
+    font-size: 1.7vw;
+  }
+  .frame .contents .second-slide .head .taqab {
+    margin-top: 1.7vw;
+  }
+  .frame .contents .second-slide .head .taqab span {
+    font-size: 1.9vw;
+  }
+  .frame .contents .second-slide .head ul {
+    list-style: none;
+  }
+  .frame .contents .second-slide .head ul li {
+    font-size: 1.7vw;
+  }
+  .frame .contents .third-slide.show {
+    transform: translate(0, -32vw) scale(1);
+  }
+  .frame .contents .third-slide .head h1 {
+    font-size: 3vw;
+  }
+  .frame .contents .third-slide .head h5 {
+    font-size: 1.3vw;
+  }
+  .frame .contents .third-slide .head h3 {
+    font-size: 2vw;
+  }
+  .frame .contents .third-slide .head h4 {
+    font-size: 1.3vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .firework-spark {
+    width: 0.7vw;
+    height: 0.7vw;
+  }
+  .auto-scroll {
+    padding: 1vw;
+    width: 35vw;
+  }
+  .auto-scroll input {
+    width: 2vw;
+    height: 2vw;
+  }
+  .auto-scroll label {
+    font-size: 2vw;
+  }
+  .ig .teams .team svg {
+    width: 3vw;
+    height: 3vw;
+  }
+  .ig .teams .team span {
+    font-size: 2.5vw;
+  }
+  .ig .head h5 {
+    font-size: 4vw;
+  }
+  .ig .head h3 {
+    font-size: 6vw;
+  }
+  .ig .head span {
+    font-size: 3vw;
+  }
+  .firework-fragment {
+    width: 1.1vw;
+    height: 1.1vw;
+  }
+  .firework-rocket {
+    width: 0.5vw;
+    height: 0.5vw;
+  }
+  .firework-rocket-inner {
+    margin-left: 1vw;
+  }
+  .logo {
+    top: 4vw;
+    left: 4vw;
+    width: 10vw;
+  }
+  .frame .component .ways {
+    height: 5vw;
+  }
+  .frame .component .ways .scroll p {
+    font-size: 2.5vw;
+  }
+  .frame .component .ways .scroll .keep-scroll {
+    width: 3vw;
+    height: 3vw;
+  }
+  .frame .component .ways .scroll .keep-scroll svg {
+    width: 1.5vw;
+    height: 1.5vw;
+  }
+  .frame .component .mountains-container {
+    bottom: -10vw;
+  }
+  .frame .component .mountains img {
+    width: 130%;
+  }
+  .frame .component .mountains img:first-child,
+  .frame .component .mountains img:last-child,
+  .frame .component .mountains img:nth-child(2) {
+    bottom: 12vw;
+  }
+  .frame .component .sky .goku {
+    width: 7vw;
+  }
+  .frame .component .sky .stars img {
+    width: 120%;
+  }
+  .frame .component .sky .moons {
+    top: 8vw;
+    right: 8vw;
+    width: 11vw;
+    height: 11vw;
+  }
+  .frame .contents .first-slide h1 {
+    font-size: 6vw;
+  }
+  .frame .contents .first-slide p {
+    font-size: 2vw;
+  }
+  .frame .contents .first-slide span {
+    font-size: 2vw;
+  }
+  .frame .contents .first-slide h6 {
+    font-size: 2.2vw;
+  }
+  .frame .contents .first-slide h5 {
+    font-size: 2.3vw;
+  }
+  .frame .contents .second-slide.show {
+    transform: translate(0, 15vw);
+  }
+  .frame .contents .second-slide .head h3 {
+    font-size: 2vw;
+  }
+  .frame .contents .second-slide .head h1 {
+    font-size: 6vw;
+  }
+  .frame .contents .second-slide .head p {
+    font-size: 2.5vw;
+  }
+  .frame .contents .second-slide .head .taqab {
+    margin-top: 2vw;
+  }
+  .frame .contents .second-slide .head .taqab span {
+    font-size: 3vw;
+  }
+  .frame .contents .second-slide .head .taqab p {
+    width: 80vw;
+  }
+  .frame .contents .second-slide .head ul li {
+    font-size: 2.5vw;
+  }
+  .frame .contents .third-slide.show {
+    transform: translate(0, -34vw) scale(1);
+  }
+  .frame .contents .third-slide {
+    gap: 5vw;
+  }
+  .frame .contents .third-slide .head h1 {
+    font-size: 5vw;
+  }
+  .frame .contents .third-slide .head h5 {
+    font-size: 2.3vw;
+  }
+  .frame .contents .third-slide .head h3 {
+    font-size: 3.6vw;
+  }
+  .frame .contents .third-slide .head h4 {
+    font-size: 2.3vw;
+  }
+  .frame .contents .third-slide .images img {
+    width: 20vw;
+  }
+  .frame .contents .third-slide .images .center {
+    width: 40vw;
+  }
+  .frame .contents .third-slide .images .center.zoomed {
+    transition: all 3s ease 0s;
+    transform: scale(2.5) translate(0, -5vw);
+  }
+}
+@media screen and (max-width: 550px) {
+  .logo {
+    top: 6vw;
+    left: 4vw;
+    width: 14vw;
+  }
+  .auto-scroll {
+    padding: 1.5vw;
+    width: 55vw;
+  }
+  .auto-scroll input {
+    width: 3vw;
+    height: 3vw;
+  }
+  .auto-scroll label {
+    font-size: 3vw;
+  }
+  .ig .teams .team {
+    padding: 0.7vw 0.9vw;
+  }
+  .ig .teams .team svg {
+    width: 4vw;
+    height: 4vw;
+  }
+  .ig .teams .team span {
+    font-size: 3.5vw;
+  }
+  .ig .head h5 {
+    font-size: 6vw;
+  }
+  .ig .head h3 {
+    font-size: 8vw;
+  }
+  .ig .head span {
+    font-size: 5vw;
+  }
+  .firework-spark {
+    width: 0.9vw;
+    height: 0.9vw;
+  }
+  .firework-fragment {
+    width: 1.3vw;
+    height: 1.3vw;
+  }
+  .firework-rocket {
+    width: 0.7vw;
+    height: 0.7vw;
+  }
+  .firework-rocket-inner {
+    margin-left: 1vw;
+  }
+  .frame .component .ways {
+    height: 7vw;
+  }
+  .frame .component .ways .cars {
+    top: -14vw;
+  }
+  .frame .component .ways .cars .car {
+    width: 35vw;
+  }
+  .frame .component .ways .cars .ban-behind,
+  .frame .component .ways .cars .ban-front {
+    width: 6vw;
+    top: 8vw;
+  }
+  .frame .component .ways .cars .ban-behind {
+    left: 4.5vw;
+  }
+  .frame .component .ways .cars .ban-front {
+    left: 25.7vw;
+  }
+  .frame .component .ways .cars.cars2 {
+    top: -23.5vw;
+  }
+  .frame .component .ways .cars.cars2 .ban-behind,
+  .frame .component .ways .cars.cars2 .ban-front {
+    width: 6vw;
+    top: 17vw;
+  }
+  .frame .component .ways .cars.cars2 .ban-front {
+    left: 20vw;
+  }
+  .frame .component .ways .scroll p {
+    font-size: 3.5vw;
+  }
+  .frame .component .ways .scroll .keep-scroll {
+    width: 4vw;
+    height: 4vw;
+  }
+  .frame .component .ways .scroll .keep-scroll svg {
+    width: 2vw;
+    height: 2vw;
+  }
+  .frame .component .mountains img {
+    width: 150%;
+  }
+  .frame .component .mountains img:first-child,
+  .frame .component .mountains img:last-child,
+  .frame .component .mountains img:nth-child(2) {
+    bottom: 10vw;
+  }
+  .frame .component .sky .goku {
+    transform: scale(-1, 1) translate(10vw, 30vw);
+    width: 10vw;
+  }
+  .frame .component .sky .stars img {
+    width: 140%;
+  }
+  .frame .component .sky .moons {
+    top: 9vw;
+    right: 9vw;
+    width: 14vw;
+    height: 14vw;
+  }
+  .frame .contents .first-slide h1 {
+    font-size: 9vw;
+  }
+  .frame .contents .first-slide p {
+    font-size: 3vw;
+  }
+  .frame .contents .first-slide span {
+    font-size: 2vw;
+  }
+  .frame .contents .first-slide h6 {
+    font-size: 3vw;
+  }
+  .frame .contents .first-slide h5 {
+    font-size: 3vw;
+  }
+  .frame .contents .first-slide .quotes {
+    margin-top: 5vw;
+  }
+  .frame .contents .first-slide .quotes svg:first-child {
+    width: 4vw;
+    height: 4vw;
+    bottom: 13vw;
+    left: 4vw;
+  }
+  .frame .contents .third-slide.show {
+    transform: translate(0, -40vw) scale(1);
+  }
+  .frame .contents .third-slide {
+    gap: 5vw;
+  }
+  .frame .contents .third-slide .head h1 {
+    font-size: 6vw;
+  }
+  .frame .contents .third-slide .head h5 {
+    font-size: 3vw;
+  }
+  .frame .contents .third-slide .head h3 {
+    font-size: 4vw;
+  }
+  .frame .contents .third-slide .head h4 {
+    font-size: 3vw;
+  }
+  .frame .contents .third-slide .images {
+    flex-direction: column;
+  }
+  .frame .contents .third-slide .images img {
+    width: 30vw;
+  }
+  .frame .contents .third-slide .images .center {
+    width: 60vw;
+  }
+  .frame .contents .third-slide .images .left, .frame .contents .third-slide .images .right {
+    flex-direction: row;
+  }
+  .frame .contents .second-slide.show {
+    transform: translate(0, 30vw);
+  }
+  .frame .contents .second-slide .head h3 {
+    font-size: 2.5vw;
+  }
+  .frame .contents .second-slide .head h1 {
+    font-size: 7vw;
+  }
+  .frame .contents .second-slide .head p {
+    font-size: 3vw;
+  }
+  .frame .contents .second-slide .head .taqab {
+    margin-top: 3vw;
+  }
+  .frame .contents .second-slide .head .taqab span {
+    font-size: 4vw;
+  }
+  .frame .contents .second-slide .head .taqab p {
+    width: 90vw;
+  }
+  .frame .contents .second-slide .head ul li {
+    font-size: 3vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .logo {
+    top: 15vw;
+    left: 5vw;
+    width: 18vw;
+  }
+  .auto-scroll {
+    padding: 2vw;
+    width: 60vw;
+  }
+  .auto-scroll input {
+    width: 4vw;
+    height: 4vw;
+  }
+  .auto-scroll label {
+    font-size: 4vw;
+  }
+  .ig .teams .team {
+    padding: 0.8vw 1vw;
+  }
+  .ig .teams .team svg {
+    width: 5vw;
+    height: 5vw;
+  }
+  .ig .teams .team span {
+    font-size: 4.5vw;
+  }
+  .ig .head h5 {
+    font-size: 7vw;
+  }
+  .ig .head h3 {
+    font-size: 9vw;
+  }
+  .ig .head span {
+    font-size: 6vw;
+  }
+  .firework-spark {
+    width: 1.1vw;
+    height: 1.1vw;
+  }
+  .firework-fragment {
+    width: 1.5vw;
+    height: 1.5vw;
+  }
+  .firework-rocket {
+    width: 0.9vw;
+    height: 0.9vw;
+  }
+  .firework-rocket-inner {
+    margin-left: 1vw;
+  }
+  .frame .component .ways {
+    height: 9vw;
+  }
+  .frame .component .ways .rumputs {
+    bottom: 5vw;
+  }
+  .frame .component .ways .scroll p {
+    font-size: 4.5vw;
+  }
+  .frame .component .ways .scroll .keep-scroll {
+    width: 5vw;
+    height: 5vw;
+  }
+  .frame .component .ways .scroll .keep-scroll svg {
+    width: 2.5vw;
+    height: 2.5vw;
+  }
+  .frame .component .sky .stars img {
+    width: 180%;
+  }
+  .frame .component .sky .goku {
+    transform: scale(-1, 1) translate(10vw, 80vw);
+    width: 13vw;
+  }
+  .frame .component .sky .moons {
+    top: 11vw;
+    right: 11vw;
+    width: 16vw;
+    height: 16vw;
+  }
+  .frame .contents .first-slide {
+    width: 100%;
+  }
+  .frame .contents .first-slide h1 {
+    font-size: 10vw;
+  }
+  .frame .contents .first-slide p {
+    font-size: 4vw;
+    width: unset;
+  }
+  .frame .contents .first-slide span {
+    font-size: 3vw;
+  }
+  .frame .contents .first-slide h6 {
+    font-size: 4vw;
+  }
+  .frame .contents .first-slide h5 {
+    font-size: 4vw;
+  }
+  .frame .contents .first-slide .quotes {
+    width: 70vw;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+  }
+  .frame .contents .first-slide .quotes svg:first-child {
+    width: 5vw;
+    height: 5vw;
+    bottom: 14vw;
+    left: 8vw;
+  }
+  .frame .contents .third-slide.show {
+    transform: translate(0, -60vw) scale(1);
+  }
+  .frame .contents .third-slide {
+    gap: 5vw;
+  }
+  .frame .contents .third-slide .head h1 {
+    font-size: 8vw;
+  }
+  .frame .contents .third-slide .head h5 {
+    font-size: 4vw;
+  }
+  .frame .contents .third-slide .head h3 {
+    font-size: 6vw;
+  }
+  .frame .contents .third-slide .head h4 {
+    font-size: 4vw;
+  }
+  .frame .contents .third-slide .images {
+    flex-direction: column;
+  }
+  .frame .contents .third-slide .images img {
+    width: 40vw;
+  }
+  .frame .contents .third-slide .images .center {
+    width: 80vw;
+  }
+  .frame .contents .third-slide .images .left, .frame .contents .third-slide .images .right {
+    flex-direction: row;
+  }
+  .frame .contents .second-slide.show {
+    transform: translate(0, 40vw);
+  }
+  .frame .contents .second-slide .head h3 {
+    font-size: 3vw;
+  }
+  .frame .contents .second-slide .head h1 {
+    font-size: 9vw;
+  }
+  .frame .contents .second-slide .head p {
+    font-size: 4vw;
+  }
+  .frame .contents .second-slide .head .taqab {
+    margin-top: 7vw;
+    margin-bottom: 5vw;
+  }
+  .frame .contents .second-slide .head .taqab span {
+    font-size: 4.5vw;
+  }
+  .frame .contents .second-slide .head .taqab p {
+    width: 95vw;
+  }
+  .frame .contents .second-slide .head ul li {
+    font-size: 4vw;
+  }
+}/*# sourceMappingURL=style.css.map */
